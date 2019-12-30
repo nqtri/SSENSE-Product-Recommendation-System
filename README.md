@@ -17,7 +17,7 @@ Lastly, based on engineered features a similar product recommendation system is 
 
 Another expansion is to make use of the image URLs to train a neural network to recognize products of certain designers.
 
-### Data Scraping
+### * Data Scraping
 
 The following main packages are used in the scraping process:
 
