@@ -48,8 +48,8 @@ The extracted information is stored as 23 CSV files on AWS S3, which is then com
 At the time of scrapping, the data from the site includes original features such as:
 
 - Number of Products: 28,992
-- Categories: 88
->- Categories with most items: t-shirts
+* Categories: 88
+ * Categories with most items: t-shirts
 -- Categories with fewest items: waistcoats, tuxedos
 - Brands: 438
 - Brands with most items: Gucci & Off-White
