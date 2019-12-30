@@ -58,3 +58,43 @@ At the time of scrapping, the data from the site includes original features such
 * Max Price: $9,450
 * Min Price: $9
 
+
+## Feature Engineering
+
+Some original features such as 'categories', 'brands', and 'origins' are already well classified and easy to encode using Multi-Label Binarizer. However, features containing more text such as 'names', 'description' are more complicated and need more analysis and engineering.
+
+The following main packages are used in the feature engineering process:
+
+```
+import gensim
+from nltk import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer, SnowballStemmer
+import nltk
+
+from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.decomposition import NMF, LatentDirichletAllocation
+```
+
+### Name & Description Features
+
+Texts from 'name' and 'description' fields are combined and processed using text preprocessing techniques like lemmatization and stemming. Then, words describing colors are extracted from these texts to create another new feature for the recommendation system later.
+
+Next, these texts are vectorized using TF-IDF (term frequency–inverse document frequency) & TF (term frequency) statistical measures in order to apply two difference topic modelling techniques: Non-negative Matrix Factorization and Latent Dirichlet Allocation with limit to 50 topics.
+
+Non-negative Matrix Factorization was chosen as the eventual topic modelling technique for this task as the topics generated under NMF generally are better generalized and it is easier to guess the general products they are referring to.
+
+### Processed Data
+
+After feature engineering stage, nine original features that were deemed useful for the recommendation system produces 1,069 new features that will be used to train the system.
+
+* Sub Catogories: 116
+* Brands: 397
+* Text Topics: 50
+* Colors: 35
+* Countries of Origin: 19
+* Materials: 292
+* Remaining Sizes: 157
+
+## Similar Product Recommendation System
