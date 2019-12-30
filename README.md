@@ -49,8 +49,11 @@ At the time of scrapping, the data from the site includes original features such
 
 - Number of Products: 28,992
 - Categories: 88
+-- Categories with most items: t-shirts
+-- Categories with fewest items: waistcoats, tuxedos
 - Brands: 438
 - Brands with most items: Gucci & Off-White
 - Brands with fewest items: Gosha Rubchinskiy & Éditions M.R
 - Max Price: $9,450
 - Min Price: $9
+- Countries of Origin: 19+
