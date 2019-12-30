@@ -49,7 +49,7 @@ At the time of scrapping, the data from the site includes original features such
 
 - Number of Products: 28,992
 - Categories: 88
--- Categories with most items: t-shirts
+>- Categories with most items: t-shirts
 -- Categories with fewest items: waistcoats, tuxedos
 - Brands: 438
 - Brands with most items: Gucci & Off-White
