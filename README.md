@@ -98,6 +98,12 @@ After feature engineering stage, nine original features that were deemed useful 
 * Remaining Sizes: 157
 
 ## D. Similar Product Recommendation System [IN PRORGESS]
+The following main packages are used in the model building process:
+
+```
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics.pairwise import euclidean_distances
+```
 
 With no available purchase or review data on SSENSE, only content-based recommendation engines are employed in this project. There are two use cases for a recommendation engine
 
