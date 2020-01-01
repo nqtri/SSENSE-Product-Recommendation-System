@@ -103,13 +103,17 @@ With no available purchase or review data on SSENSE, only content-based recommen
 
 * A product from SSENSE saved to the wishlist is sold out. Currently, whenever a soldout product on the wishlist is clicked on, user is either taken to the page of the same category and same designer or to the page of the product that still has other sizes left or in case sold out in all sizes, to the product page where user can put in an email notification request if it comes back in stock.
 
-* A product from another site but user prefers to buy from SSENSE. There are other e-commerce sites that run the luxury retail business similar to SSENSE. Those include Farfetch (https://www.farfetch.com), END. Clothing (https://www.endclothing.com), and Mr. Porter (https://www.mrporter.com/). These sites offer products from similar designer spectrum as SSENSE but they are not based in Canada. This brings around to other potential issues with shipping, duty and tax, to return policy. For the peace of mind, many Canadian customers prefer buying the product or similar ones directly from SSENSE.
+* A product from another site but user prefers to buy from SSENSE. There are other e-commerce sites that run the luxury retail business similar to SSENSE. Those include Farfetch (https://www.farfetch.com), END. Clothing (https://www.endclothing.com), and Mr. Porter (https://www.mrporter.com). These sites offer products from similar designer spectrum as SSENSE but they are not based in Canada. This brings around to other potential issues with shipping, duty and tax, to return policy. For the peace of mind, many Canadian customers prefer buying the product or similar ones directly from SSENSE.
 
 In order to build a content-based recommendation engine, two methods are tested: Cosine Similarity and Euclidean Distances. I opted not to use another popular similarity measure called Jaccard Similarity for now as it looks for exact intersection of features while the model currently deals with prices, one of the most important features for the engine. $150 and $151 are pretty much the same and they lie close to each other on a vector but to under Jaccard measure, they are treated as different. 
 
 ### Cosine Similarity
+Cosine similarity calculates similarity by measuring the cosine of angle between two vectors, in this case a vector containing data on the engineered features of a product.
 
 ### Euclidean Distance
+Euclidean distance is similar to using a ruler to actually measure the distance between two points. There are potentially unlimted points on a plane with the same distance to an anchor point while the angle of their vectors would be very different.
 
+Most recommendations from both models are pretty consistent with each other. However, since Consine Similarity looks at the angles of 2 vectors while Euclidean Distance looks at the actual distance between 2 points, I decided to employ a hybrid approach of combining these two to yield better recommdendations for extreme cases.
 
+## Web App Deployment
 
