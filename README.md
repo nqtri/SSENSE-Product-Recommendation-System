@@ -5,7 +5,7 @@ SSENSE (https://www.ssense.com/en-ca) is one of my favorite e-commerce retailers
 In this 1st run, to limit the amount of runtime and to prioritize the exploratory data analysis and machine learning model building process, only men's products from the Canadian site were scraped. The next phase will be expanded to women's products and potentially their brand new cateogory for pets.
 
 
-## Getting Started
+## A. Getting Started
 
 There are several tasks involved in this project.
 
@@ -17,7 +17,7 @@ Lastly, based on engineered features a similar product recommendation system is 
 
 Another expansion is to make use of the image URLs to train a neural network to recognize products of certain designers.
 
-### Data Scraping
+## B. Data Scraping
 
 The following main packages are used in the scraping process:
 
@@ -59,7 +59,7 @@ At the time of scrapping, the data from the site includes original features such
 * Min Price: $9
 
 
-## Feature Engineering
+## C. Feature Engineering
 
 Some original features such as 'categories', 'brands', and 'origins' are already well classified and easy to encode using Multi-Label Binarizer. However, features containing more text such as 'names', 'description' are more complicated and need more analysis and engineering.
 
@@ -97,7 +97,7 @@ After feature engineering stage, nine original features that were deemed useful 
 * Materials: 292
 * Remaining Sizes: 157
 
-## Similar Product Recommendation System [IN PRORGESS]
+## D. Similar Product Recommendation System [IN PRORGESS]
 
 With no available purchase or review data on SSENSE, only content-based recommendation engines are employed in this project. There are two use cases for a recommendation engine
 
@@ -115,5 +115,5 @@ Euclidean distance is similar to using a ruler to actually measure the distance 
 
 Most recommendations from both models are pretty consistent with each other. However, since Consine Similarity looks at the angles of 2 vectors while Euclidean Distance looks at the actual distance between 2 points, I decided to employ a hybrid approach of combining these two to yield better recommdendations for extreme cases.
 
-## Web App Deployment
+## E. Web App Deployment [IN PRORGESS]
 
