@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SSENSE Recommendation</title>
+		 <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/normalize.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/responsive.css">
+        <!--===============================================================================================-->
+
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,400i,700,700i%7COpen+Sans:400,400i,700,700i" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+    
+	<body>
+  	<header>
+            <div class ="header">
+			<a href="{{ url_for('main') }}" id="logo">
+				<h1><b>SSENSE Recommendation Engine</b></h1>
+			</a>
+            </div>
+			<nav>
+                <a href="#" id="menu-bar"></a>
+				<ul>
+                    <li><a href="{{ url_for('sku') }}">SKU No.</a></li>
+                    <li><a href="{{ url_for('external') }}" class="selected">Product Text</a></li>
+                    <li><a href="{{ url_for('main') }}" >About</a></li>
+				</ul>
+			</nav>
+		</header>
+        
+		<div id="wrapper">
+        <section id="external">         
+            
+            <div class="container">
+              <div style="text-align:center">
+                <h2>Product Details - Other Sites</h2>
+              </div>
+              <div class="row">
+                <form action="{{ url_for('external') }}" method="POST">  
+                    <div class="column">
+                        <label for="cat">Category</label>
+                        <input type="text" id="cat" name="category" placeholder="shoes, sneakers,..." required>
+                        
+                        <label for="brand">Brand</label>
+                        <input type="text" id="brand" name="brand" placeholder="Common Projects..." required>
+                        
+                        <label for="product_name">Product Name</label>
+                        <input type="text" id="product_name" name="name" placeholder="BBall Leather Sneakers..." required>
+                        
+                        <label for="color">Color</label>
+                        <input type="text" id="color" name="color" placeholder="White, Silver,..." required>
+                        
+                        <label for="description">Product Description</label>
+                        <textarea id="description" name="description" placeholder="Product description, details..." style="height:170px" required></textarea>
+
+                    </div>
+                    <div class="column">
+                        <label for="composition">Material Composition</label>
+                        <input type="text" id="composition" name="composition" placeholder="White smooth and textured-leather...">
+                        
+                        <label for="size">Sizes</label>
+                        <input type="text" id="size" name="size" placeholder="41, 42,...">
+                        
+                        <label for="full_price">Full Price</label>
+                        <input type="number" id="full_price" name="full_price" placeholder="450...">
+                        
+                        <label for="sale_price">Sale Price</label>
+                        <input type="number" id="sale_price" name="sale_price" placeholder="210...">
+                        
+                        <label for="country">Country of Origin</label>
+                        <select id="country" name="origin">
+                          <option value="australia">Australia</option>
+                          <option value="austria">Austria</option>
+                          <option value="belgium">Belgium</option>
+                          <option value="canada">Canada</option>
+                          <option value="denmark">Denmark</option>
+                          <option value="france">France</option>
+                          <option value="germany">Germany</option>
+                          <option value="italy">Italy</option>
+                          <option value="japan">Japan</option>
+                          <option value="imported">Other</option>
+                          <option value="morocco">Morocco</option>
+                          <option value="netherlands">Netherlands</option>
+                          <option value="portugal">Portugal</option>
+                          <option value="south korea">South Korea</option>
+                          <option value="spain">Spain</option>
+                          <option value="sweden">Sweden</option>
+                          <option value="switzerland">Switzerland</option>
+                          <option value="united kingdom">United Kingdom</option>
+                          <option value="united states">United States</option>
+                        </select>
+                    </div>
+                    <div class = 'button'>
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>    
+              </div>
+            </div>    
+
+            <div class="result" align="center">
+
+            {% if sku_1 %}
+
+               <div class="parent--products">
+
+                <div class="product-all">
+                   <div class="product-img" >
+                        <img src="{{ img_1 }}">
+                   </div>     
+                   <div class="product-info">
+                        <a href="https://www.ssense.com/en-ca/men?q={{ sku_1 }}" id = "url">{{ sku_1 }}</a>
+                        <p><b>{{ brand_1 }}</b></p>
+                        <p>{{ name_1 }}</p>
+                        <p>${{ price_1 }}</p>  
+                   </div>
+                </div>
+
+                <div class="product-all">
+                    <div class="product-img">
+                        <img src="{{ img_2 }}">
+                    </div>
+                    <div class="product-info">
+                        <a href="https://www.ssense.com/en-ca/men?q={{ sku_2 }}" id = "url">{{ sku_2 }}</a>
+                        <p><b>{{ brand_2 }}</b></p>
+                        <p>{{ name_2 }}</p>
+                        <p>${{ price_3 }}</p>    
+                     </div>
+                </div>
+                   
+                <div class="product-all">  
+                    <div class="product-img">
+                        <img src="{{ img_3 }}">
+                    </div>
+                    <div class="product-info">
+                        <a href="https://www.ssense.com/en-ca/men?q={{ sku_3 }}" id = "url">{{ sku_3 }}</a>
+                        <p><b>{{ brand_3 }}</b></p>
+                        <p>{{ name_3 }}</p>
+                        <p>${{ price_3 }}</p>    
+                    </div>
+                </div>
+               </div>
+
+            {% endif %}
+            </div>
+            
+			</section>
+			<footer>
+                <a href="https://www.linkedin.com/in/triqnguyen"><img src="{{ url_for('static', filename = 'img/LinkedIn-Logo.png') }}" alt="LinkedIn" class="social-icon"></a> 
+                <a href="https://github.com/nqtri"><img src="{{ url_for('static', filename = 'img/github-wrap.png') }}" alt="GitHub" class="social-icon"></a>  
+				<p>&copy; Copyright 2020 by Tri Nguyen. </p>
+			</footer>
+		</div>
+	</body>
+</html>

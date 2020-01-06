@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SSENSE Recommendation</title>
+		 <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/normalize.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/responsive.css">
+        <!--===============================================================================================-->
+        
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,400i,700,700i%7COpen+Sans:400,400i,700,700i" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+    
+    <body>
+  	<header>
+        <div class ="header">
+        <a href="{{ url_for('main') }}" id="logo">
+            <h1><b>SSENSE Recommendation Engine</b></h1>
+        </a>
+        </div>
+        <nav>
+            <a href="#" id="menu-bar"></a>
+            <ul>
+                <li><a href="{{ url_for('sku') }}" class="selected">SKU No.</a></li>
+                <li><a href="{{ url_for('external') }}" >Product Text</a></li>
+                <li><a href="{{ url_for('main') }}" >About</a></li>
+            </ul>
+        </nav>
+	</header>
+    
+    <div id="wrapper">
+    <section>
+
+        <div class="container">
+          <div style="text-align:center">
+            <h2>Eixisting SKU Number - on SSENSE</h2>
+          </div>
+          <div class="row">
+            <form action="{{ url_for('sku') }}" method="POST">  
+                <div class="column">
+                    <input type="text" id="sku" name="sku" placeholder="e.g. 192133M237008" required>
+                </div>
+
+                <div class = 'button'>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+          </div>
+        </div>
+        
+         <div class="result" align="center">
+
+                    {% if sku_1 %}
+
+                       <div class="parent--products">
+
+                         <div class="product-all">
+                           <div class="product-img" >
+                                <img src="{{ img_1 }}">
+                           </div>     
+                           <div class="product-info">
+                                <a href="https://www.ssense.com/en-ca/men?q={{ sku_1 }}" id = "url">{{ sku_1 }}</a>
+                                <p><b>{{ brand_1 }}</b></p>
+                                <p>{{ name_1 }}</p>
+                                <p>${{ price_1 }}</p>  
+                           </div>
+
+                          </div>
+
+                        <div class="product-all">
+                            <div class="product-img">
+                                <img src="{{ img_2 }}">
+                            </div>
+                            <div class="product-info">
+                                <a href="https://www.ssense.com/en-ca/men?q={{ sku_2 }}" id = "url">{{ sku_2 }}</a>
+                                <p><b>{{ brand_2 }}</b></p>
+                                <p>{{ name_2 }}</p>
+                                <p>${{ price_2 }}</p>    
+                             </div>
+
+                           </div>
+                        <div class="product-all">  
+                            <div class="product-img">
+                                <img src="{{ img_3 }}">
+                            </div>
+                            <div class="product-info">
+                                <a href="https://www.ssense.com/en-ca/men?q={{ sku_3 }}" id = "url">{{ sku_3 }}</a>
+                                <p><b>{{ brand_3 }}</b></p>
+                                <p>{{ name_3 }}</p>
+                                <p>${{ price_3 }}</p>    
+                            </div>
+
+                            </div>
+                       </div>
+
+                    {% endif %}
+              </div>
+
+     </section>   
+          <footer>
+                <a href="https://www.linkedin.com/in/triqnguyen"><img src="{{ url_for('static', filename = 'img/LinkedIn-Logo.png') }}" alt="LinkedIn" class="social-icon"></a> 
+                <a href="https://github.com/nqtri"><img src="{{ url_for('static', filename = 'img/github-wrap.png') }}" alt="GitHub" class="social-icon"></a>  
+				<p>&copy; Copyright 2020 by Tri Nguyen. </p>
+			</footer>
+          </div>
+	</body>
+</html>

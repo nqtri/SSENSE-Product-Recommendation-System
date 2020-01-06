@@ -1,0 +1,92 @@
+@media screen and (min-width: 640px) {
+	/*******2 COLUMN LAYOUT**********
+	**********************************/
+  #menu-bar {
+    display: none;
+  }
+  #name {
+    display: none;
+  }
+  
+	#primary {
+		width: 50%;
+		float: left;
+	}
+	
+	#secondary {
+		width: 40%;
+		float: right;
+	}
+
+	/*******PAGE: ABOUT**************
+	**********************************/
+	
+	.logo-photo {
+		float: left;
+		margin: 6% 5% 200px 0;
+	}
+
+  footer {
+    font-size: 0.8em;
+    clear: both;
+    text-align: center;
+    padding-top: 50px;
+    color: #999;
+  }
+
+}
+
+@media screen and (min-width: 1190px) {
+	
+	/*******HEADER******************** 
+	**********************************/
+	
+  #menu-bar {
+    display: none;
+  }
+  
+  #name {
+    display: none;
+    
+  }
+	nav {
+		background: none;
+		float: right;
+		font-size: 1.5em;
+		margin-right: 5%;
+		text-align: right;
+		width: 60%;
+        border-bottom: none;
+	}
+	
+	#logo {
+		float: left;
+		margin-left: 5%;
+		text-align: left;
+		width: 30%;
+	}
+	
+	h1 {
+		font-size: 3.5em;
+	}
+	
+	h2 {
+		font-size: 1.4em;
+		margin: 0 0 20px 0;
+	}
+	
+	header {
+		border-bottom: 5px solid #4D5061;
+		margin-bottom: 60px;
+	}
+			
+}
+
+@media only screen and (max-width : 639px) {
+
+  
+	#menu-bar {
+
+		display:none;
+    }
+  

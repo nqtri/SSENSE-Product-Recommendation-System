@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SSENSE Recommendation</title>
+		 <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/normalize.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/responsive.css">
+        <!--===============================================================================================-->
+        
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,400i,700,700i%7COpen+Sans:400,400i,700,700i" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+    
+	<body>
+  	<header>
+            <div class ="header">
+			<a href="{{ url_for('main') }}" id="logo">
+				<h1><b>SSENSE Recommendation Engine</b></h1>
+			</a>
+            </div>
+			<nav>
+                <a href="#" id="menu-bar"></a>
+				<ul>
+                    <li><a href="{{ url_for('sku') }}">SKU No.</a></li>
+                    <li><a href="{{ url_for('external') }}">Product Text</a></li>
+                    <li><a href="{{ url_for('main') }}" class="selected">About</a></li>
+				</ul>
+			</nav>
+		</header>
+        
+		<div id="wrapper">
+			<section>
+                <div class="container">
+                <div style="text-align:center">
+                    <h2>Hello!</h2>
+                </div>
+                <div>
+				    <img href="https://www.ssense.com/en-ca" src="{{ url_for('static', filename = 'img/three_logos.jpg') }}" alt="SSENSE Logo" class="logo-photo">
+				    <p>This is a passion project relating to SSENSE <a href="https://www.ssense.com/en-ca" id = "url">(https://www.ssense.com/en-ca)</a>, one of my favorite e-commerce retailers.</p> 
+				
+				    <p>Together with the plan to scrape data from the web and create my own dataset for a machine learning project, I decided to try 
+				    scraping product data from SSENSE by utilizing the AWS Lambda Function. Then, I built a recommendation engine based on analyzed and processed text details of the products.</p>
+          
+                    <p>The codes and more details for this project can be found <a href="https://github.com/nqtri/SSENSE-Product-Recommendation-System" id = "url"><b><u>here</u></b></a>.</p>
+                </div>
+                </div>
+			</section>
+			<footer>
+                <a href="https://www.linkedin.com/in/triqnguyen"><img src="{{ url_for('static', filename = 'img/LinkedIn-Logo.png') }}" alt="LinkedIn" class="social-icon"></a> 
+                <a href="https://github.com/nqtri"><img src="{{ url_for('static', filename = 'img/github-wrap.png') }}" alt="GitHub" class="social-icon"></a> 
+				<p>&copy; Copyright 2020 by Tri Nguyen. </p>
+			</footer>
+		</div>
+	</body>
+</html>
