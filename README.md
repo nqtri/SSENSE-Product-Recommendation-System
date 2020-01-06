@@ -1,3 +1,6 @@
+![Homepage](https://github.com/nqtri/SSENSE-Product-Recommendation-System/blob/master/image/homepage.png)
+
+
 # SSENSE Product Recommendation System
 
 [SSENSE](https://www.ssense.com/en-ca) is one of my favorite e-commerce retailers, especially during sale season so personally I have a lot of interest in their product offerings. Together with the plan to scrape data from the web and create my own dataset for machine learning projects, I decided to try scraping product data from SSENSE. 
@@ -23,6 +26,10 @@ Secondly, based on the extracted features of products from the web, feature engi
 Lastly, based on engineered features a similar product recommendation system is built to suggest other items in case a chosen product is sold out.
 
 Another expansion is to make use of the image URLs to train a neural network to recognize products of certain designers.
+
+### Workflow
+
+![Project Workflow](https://github.com/nqtri/SSENSE-Product-Recommendation-System/blob/master/image/workflow.png)
 
 ## C. Data Scraping
 
