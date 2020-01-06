@@ -7,6 +7,8 @@
 
 In this initial run, to limit the amount of runtime and to prioritize the exploratory data analysis and machine learning model building process, only men's products from the Canadian site were scraped. The next phase will be expanded to women's products and potentially their brand new cateogory for pets.
 
+**Final Product**: [ssense-recoengine.herokuapp.com](https://ssense-recoengine.herokuapp.com/)
+
 ## A. Motivation
 
 With no available purchase or review data on SSENSE, only content-based recommendation engines are employed in this project. There are two use cases for a recommendation engine
