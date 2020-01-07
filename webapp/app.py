@@ -6,7 +6,6 @@ from vectorizer import *
 from combine_matrices import combine_matrices
 
 
-
 #product_matrix = product_matrix.drop(['sku'],axis = 1)
 
 #product_matrix = pd.read_csv('data/ssense_rec_df.csv', sep='|', header = 0)
@@ -35,16 +34,31 @@ def sku():
         with open(f'data/ssense_rec_df.pickle', 'rb') as f:
             product_matrix = pickle.load(f)
             f.close()
-
-        with open(f'data/product_df.pickle', 'rb') as f:
-            product_df = pickle.load(f)
+        with open(f'data/product_sku.pickle', 'rb') as f:
+            product_sku = pickle.load(f)
             f.close()
+        with open(f'data/product_brand.pickle', 'rb') as f:
+            product_brand = pickle.load(f)
+            f.close()    
+        with open(f'data/product_name.pickle', 'rb') as f:
+            product_name = pickle.load(f)
+            f.close()    
+        with open(f'data/product_price.pickle', 'rb') as f:
+            product_price = pickle.load(f)
+            f.close()    
+        with open(f'data/product_img.pickle', 'rb') as f:
+            product_img = pickle.load(f)
+            f.close()   
+            
         # Extract the input
         sku_number = flask.request.form['sku']
 
-        prod_0 = get_prod(sku_number,product_matrix,product_df,1) #top 1
-        prod_1 = get_prod(sku_number,product_matrix,product_df,2) #top 2
-        prod_2 = get_prod(sku_number,product_matrix,product_df,3) #top 3
+        prod_0 = get_prod(sku_number,product_matrix,product_sku, product_brand, product_name,
+             product_price,product_img,1) #top 1
+        prod_1 = get_prod(sku_number,product_matrix,product_sku, product_brand, product_name,
+             product_price,product_img,2) #top 2
+        prod_2 = get_prod(sku_number,product_matrix,product_sku, product_brand, product_name,
+             product_price,product_img,3) #top 3
         
         return flask.render_template('sku.html',original_input=
                                       {'SKU': sku_number},
@@ -105,14 +119,29 @@ def external():
             product_matrix = pickle.load(f)
             f.close()
 
-        with open(f'data/product_df.pickle', 'rb') as f:
-            product_df = pickle.load(f)
+        with open(f'data/product_sku.pickle', 'rb') as f:
+            product_sku = pickle.load(f)
             f.close()
+        with open(f'data/product_brand.pickle', 'rb') as f:
+            product_brand = pickle.load(f)
+            f.close()    
+        with open(f'data/product_name.pickle', 'rb') as f:
+            product_name = pickle.load(f)
+            f.close()    
+        with open(f'data/product_price.pickle', 'rb') as f:
+            product_price = pickle.load(f)
+            f.close()    
+        with open(f'data/product_img.pickle', 'rb') as f:
+            product_img = pickle.load(f)
+            f.close()   
         # Extract the input
 
-        prod_0 = get_prod_2(combined_matrix,product_matrix,product_df,1) #top 1
-        prod_1 = get_prod_2(combined_matrix,product_matrix,product_df,2) #top 2
-        prod_2 = get_prod_2(combined_matrix,product_matrix,product_df,3) #top 3
+        prod_0 = get_prod_2(combined_matrix,product_matrix,product_sku, 
+                            product_brand, product_name,product_price,product_img,1) #top 1
+        prod_1 = get_prod_2(combined_matrix,product_matrix,product_sku, 
+                            product_brand, product_name,product_price,product_img,2) #top 2
+        prod_2 = get_prod_2(combined_matrix,product_matrix,product_sku, 
+                            product_brand, product_name,product_price,product_img,3) #top 3
         
         return flask.render_template('external.html',
                                       sku_1 = prod_0[0], 
