@@ -85,8 +85,16 @@
 @media only screen and (max-width : 639px) {
 
   
-	#menu-bar {
+#menu-bar {
 
 		display:none;
     }
-  
+
+.parent--products {
+  display: flex;
+  flex-direction:column;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
