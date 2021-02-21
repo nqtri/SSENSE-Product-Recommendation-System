@@ -91,7 +91,7 @@ sklearn.decomposition
 
 Texts from 'name' and 'description' fields are combined and processed using text preprocessing techniques like lemmatization and stemming. Then, words describing colors are extracted from these texts to create another new feature for the recommendation system later.
 
-Next, these texts are vectorized using TF-IDF (term frequency–inverse document frequency) & TF (term frequency) statistical measures in order to apply two difference topic modelling techniques: Non-negative Matrix Factorization and Latent Dirichlet Allocation with limit to 50 topics.
+Next, these texts are vectorized using TF-IDF (term frequency–inverse document frequency) & TF (term frequency) statistical measures in order to apply two different topic modelling techniques: Non-negative Matrix Factorization and Latent Dirichlet Allocation with limit to 50 topics.
 
 Non-negative Matrix Factorization was chosen as the eventual topic modelling technique for this task as the topics generated under NMF generally are better generalized and it is easier to guess the general products they are referring to.
 
