@@ -1,4 +1,4 @@
-flask==1.1.1
+flask==2.2.5
 gunicorn
 pandas==0.25.3
 numpy==1.15.4
